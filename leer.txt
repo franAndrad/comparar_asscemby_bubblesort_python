@@ -1,0 +1,12 @@
+Adjunto la actividad solicitada en la clase de hoy. 
+
+Para una mejor organización, he creado cuatro carpetas, cada una representando el rango de tamaños en KB recorridos.
+
+El codigo .asm lo fui creando mediante EMU 8086 (Emulador de la arquitectura 8086), para poder realizar pruebas con conjuntos de datos más pequeños. Este se encarga de almacenar en un arreglo los datos de un archivo binario con elementos de 1 bit de tamaño. Luego, realiza el ordenamiento burbuja de estos datos y los muestra.
+
+El archivo binario tiene un tamaño de 64KB y fue generado mediante Python.
+
+Posteriormente, utilicé DOSbox para compilar el código con "masm" y enlazarlo con "link", generando el ejecutable correspondiente. Además, desarrollé un script en Python que cumple con la misma funcionalidad para poder comparar la velocidad de ejecución.
+
+
+Para probar el código, se recomienda abrir DOSbox, ajustar la velocidad de lectura (puesto que por defecto es baja) y ejecutar el archivo ejecutable. Para al archivo Python, este puede ser ejecutado mediante PyCharm u otro editor de codigo que lo permita.
