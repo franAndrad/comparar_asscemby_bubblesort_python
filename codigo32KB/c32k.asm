@@ -3,9 +3,9 @@
 
 .data
 filename db 'datos.bin', 0   ; Nombre del archivo
-buffer db 32000 dup(?)       ; Buffer para almacenar los datos leidos
-arr db 32000 dup(?)          ; Arreglo para los datos leidos
-size_arr equ 32000           ; Tamaño del arreglo
+buffer db 32768 dup(?)       ; Buffer para almacenar los datos leidos 32KB
+arr db 32768 dup(?)          ; Arreglo para los datos leidos 32KB
+size_arr equ 32768           ; Tamaño del arreglo 
 
 .code
 main PROC
