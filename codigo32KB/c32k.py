@@ -1,19 +1,21 @@
-filename = 'datos.bin'  # Nombre del archivo
-arreglo_bin = []  # Lista para almacenar los datos leídos
+filename = 'datos.bin' 
+arreglo_bin = []  
 
-n = 32000
-with open(filename, "rb") as archivo_binario:
-    datos = archivo_binario.read(n)  # Lee los primeros 'n' bytes
-    for dato in datos:  # Itera a través de los datos leídos
-        arreglo_bin.append(dato)  # Almacena los datos en la lista
+n = 32768  # 32KB
+
+# Almacena los datos en la lista
+m = open(filename, 'rb')
+datos = m.read(n)  
+arreglo_bin.extend(datos)  
+m.close()
 
 # Ordenamiento Burbuja
-for i in range(n - 1):
-    for j in range(0, n - i - 1):
+for i in range(len(arreglo_bin) - 1):
+    for j in range(0, len(arreglo_bin) - i - 1):
         if arreglo_bin[j] > arreglo_bin[j + 1]:
             arreglo_bin[j], arreglo_bin[j + 1] = arreglo_bin[j + 1], arreglo_bin[j]
 
-# Mostrar los datos ordenados
-print("\n\nDatos ordenados:")
+# Mostrar los datos ordenados en ASCII
+print("Datos ordenados:")
 for dato in arreglo_bin:
-    print(chr(dato), end='')  # Imprime el carácter ASCII correspondiente a cada byte
+    print(chr(dato), end='') 
