@@ -1,11 +1,11 @@
 .model small    ; Codigo, datos y stack son todos de tamaño limitado, no superen los 64KB
-.stack 10000h   ; Reserva 64KB  
+.stack 1000h    ; Reservo 4096 bytes en la memoria
 
 .data
 filename db 'datos.bin', 0   ; Nombre del archivo
-buffer db 65536 dup(?)       ; Buffer para almacenar los datos leidos 64KB
-arr db 65536 dup(?)          ; Arreglo para los datos leidos 64KB
-size_arr equ 65536           ; Tamaño del arreglo 
+buffer db 15360 dup(?)       ; Buffer para almacenar los datos leidos 15KB
+arr db 15360 dup(?)          ; Arreglo para los datos leidos 15KB
+size_arr equ 15360           ; Tamaño del arreglo 
 
 .code
 main PROC

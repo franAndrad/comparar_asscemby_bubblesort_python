@@ -1,7 +1,7 @@
 filename = 'datos.bin' 
 arreglo_bin = []  
 
-n = 10240  # 10KB
+n = 15360  # 15KB
 
 # Almacena los datos en la lista
 m = open(filename, 'rb')
