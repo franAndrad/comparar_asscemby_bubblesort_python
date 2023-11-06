@@ -34,8 +34,8 @@ main PROC
     mov ah, 3Eh       
     mov bx, bx        
     int 21h           
-         
-                                                                                                                                                                                                         
+
+
     ; Algoritmo de ordenamiento (Bubble Sort) para el arreglo "datos"
 
     mov cx, cant_bytes - 1  ; Establece el contador del bucle exterior
@@ -78,6 +78,10 @@ main PROC
         inc si          
         dec cx          
         jnz print_loop  
+    
+    ; Terminar el programa
+    mov ah, 4Ch   
+    int 21h       
 
 main ENDP
 end main
