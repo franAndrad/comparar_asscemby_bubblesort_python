@@ -1,4 +1,5 @@
 .model medium    ; Usamos el modelo medium para manejar mayores cantidades de datos
+.stack 4000h ; 4KB de espacio de pila
 
 
 .data
