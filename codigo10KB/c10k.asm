@@ -34,38 +34,35 @@ main PROC
     mov ah, 3Eh       
     mov bx, bx        
     int 21h           
+         
                                                                                                                                                                                                          
     ; Algoritmo de ordenamiento (Bubble Sort) para el arreglo "datos"
-    
-    mov cx, cant_bytes - 1  ; Establece el contador del bucle exterior 
+
+    mov cx, cant_bytes - 1  ; Establece el contador del bucle exterior
 
     bucle_exterior:
-        mov si, 0  
-        mov di, 0  
+        mov si, 0
+        mov di, si
     
-    bucle_interior:
-        inc di        
-        mov al, datos[si]   ; Carga el byte actual desde el arreglo
-        cmp al, datos[di]   ; Compara con el siguiente byte en el arreglo
-        ja intercambio   ; Salta si se debe intercambiar
-        jb menor         ; Salta si el byte actual es menor
-        jmp continuar    ; Si no se cumple ninguna continuo
+        bucle_interior:
+            inc di
+            mov al, datos[si]  ; Carga el byte actual desde el arreglo
+            cmp al, datos[di]  ; Compara con el siguiente byte en el arreglo
+            jbe no_intercambio  ; Si el byte actual es menor o igual, no intercambiar
     
-    intercambio:
-        mov ah, datos[di]
-        mov datos[di], al
-        mov datos[si], ah
+            ; Intercambio los valores
+            mov ah, datos[di]
+            mov datos[di], al
+            mov datos[si], ah
     
-    menor:
-        inc si
+        no_intercambio:
+            inc si
+            cmp si, cx         ; Compara si ha llegado al final del bucle interior
+            jb bucle_interior  ; Salta de regreso al bucle interior si no se ha completado (SI < CX)
     
-    continuar:
-        cmp si, cx          ;Compara si ha llegado al final del bucle interior
-        jb bucle_interior   ; Salta de regreso al bucle interior si no se ha completado (SI < CX)
-        
-        dec cx 
+        dec cx
         cmp cx, 0
-        ja bucle_exterior   ; Salta de regreso al bucle exterior si no se ha completado (CX > 0)
+        jne bucle_exterior  ; Salta de regreso al bucle exterior si no se ha completado (CX != 0)
     
     
     ;Mostrar Datos ordenados
