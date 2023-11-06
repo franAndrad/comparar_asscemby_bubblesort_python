@@ -1,3 +1,6 @@
+.model medium    ; Usamos el modelo medium para manejar mayores cantidades de datos
+
+
 .data
 fd db 'datos.bin', 0           ; Nombre del archivo
 datos db 10240 dup(?)          ; Buffer para almacenar los datos leidos 10KB
