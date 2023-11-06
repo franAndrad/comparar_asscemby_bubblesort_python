@@ -6,16 +6,16 @@ n = 32768  # 32KB
 # Almacena los datos en la lista
 m = open(filename, 'rb')
 datos = m.read(n)  
-arreglo_bin.extend(datos)  
+datos = list(datos)
 m.close()
 
 # Ordenamiento Burbuja
-for i in range(len(arreglo_bin) - 1):
-    for j in range(0, len(arreglo_bin) - i - 1):
-        if arreglo_bin[j] > arreglo_bin[j + 1]:
-            arreglo_bin[j], arreglo_bin[j + 1] = arreglo_bin[j + 1], arreglo_bin[j]
+for i in range(len(datos) - 1):
+    for j in range(0, len(datos) - i - 1):
+        if datos[j] > datos[j + 1]:
+            datos[j], datos[j + 1] = datos[j + 1], datos[j]
 
 # Mostrar los datos ordenados en ASCII
 print("Datos ordenados:")
-for dato in arreglo_bin:
+for dato in datos:
     print(chr(dato), end='') 

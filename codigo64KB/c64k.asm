@@ -1,16 +1,16 @@
 .model medium    ; Usamos el modelo medium para manejar mayores cantidades de datos
-.stack 4000h ; 4KB de espacio de pila
+.stack 256       ; Define el tamaño del segmento de pila (256 bytes)
 
 
 .data
 fd db 'datos.bin', 0           ; Nombre del archivo
-datos db 65536 dup(?)          ; Buffer para almacenar los datos leidos 64KB
-cant_bytes equ 65536           ; Tamanio del arreglo 
+datos db 65280 dup(?)          ; Buffer para almacenar los datos leidos  63.75 KB
+cant_bytes equ 65280           ; Tamanio del arreglo 
     
     
 .code
 main PROC
-    
+
     
     ;Abrir un archivo y guardarlo en un arreglo datos
     
