@@ -1,7 +1,6 @@
 filename = 'datos.bin' 
-arreglo_bin = []  
 
-n = 61440  # 60KB
+n = 61440  # 63.75KB
 
 # Almacena los datos en la lista
 m = open(filename, 'rb')

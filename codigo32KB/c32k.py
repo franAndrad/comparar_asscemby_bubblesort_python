@@ -1,5 +1,4 @@
 filename = 'datos.bin' 
-arreglo_bin = []  
 
 n = 32768  # 32KB
 
